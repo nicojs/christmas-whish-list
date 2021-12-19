@@ -1,4 +1,4 @@
-import { WhishList } from '../whish-list';
+import { WishList } from '../wish-list';
 import { Price } from './price';
 import { Supplier } from './supplier';
 
@@ -12,6 +12,6 @@ export class Product {
   display(): string {
     return `${this.title}${
       this.supplier ? ` from ${this.supplier.name}` : ''
-    } (${WhishList.formatPrice(this.price)})`;
+    } (${WishList.formatPrice(this.price)})`;
   }
 }

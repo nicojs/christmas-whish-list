@@ -2,7 +2,7 @@ import { exchangeRateToEuro } from './models/currency';
 import { Price } from './models/price';
 import { Product } from './models/product';
 
-export class WhishList {
+export class WishList {
   private list: Product[] = [];
 
   constructor(public readonly title: string) {}
@@ -29,17 +29,17 @@ export class WhishList {
     }
   }
 
-  get whishes() {
+  get wishes() {
     return [...this.list];
   }
 
   printList() {
-    console.log(`My ${this.title} whishes`);
+    console.log(`My ${this.title} wishes`);
     for (let i = 0; i < this.list.length; i++) {
       const product = this.list[i];
       console.log(` ${i + 1}. ${product.display()}`);
     }
-    console.log(`Total: ${WhishList.formatPrice(this.totalPrice)}`);
+    console.log(`Total: ${WishList.formatPrice(this.totalPrice)}`);
   }
 
   static formatPrice(price: Price): string {

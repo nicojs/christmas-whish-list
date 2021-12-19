@@ -16,13 +16,13 @@ Change the code for the `christmasCarols` from previous lab. It should now be an
 const christmasCarols = new Product('Christmas carols CD', 24.99);
 ```
 
-## Exercise 2: The `WhishList` class
+## Exercise 2: The `WishList` class
 
-Create and implement the `WishList` class. This class is responsible for keeping track of our whish list. Use this skeleton class:
+Create and implement the `WishList` class. This class is responsible for keeping track of our wish list. Use this skeleton class:
 
 ```ts
-export class WhishList {
-  private list: Product[];
+export class WishList {
+  private wishes: Product[];
   public readonly title: string;
 
   constructor(title: string) {
@@ -45,9 +45,9 @@ export class WhishList {
   }
 
   printList() {
-    // TODO, print the whish list.
+    // TODO, print the wish list.
     // Example:
-    // My {title} whishes
+    // My {title} wishes
     //  1. {product1 title} €{price}
     //  2. {product2 title} €{price}
     // Total: €{total price}
@@ -63,7 +63,7 @@ export class WhishList {
 After you're done implementing, this should work:
 
 ```ts
-const christmasList = new WhishList('Christmas 🎅');
+const christmasList = new WishList('Christmas 🎅');
 const brio: Supplier = { id: 1, name: 'BRIO' };
 
 christmasList.setWish(1, new Product('Toy train', 35.58, brio));
@@ -78,7 +78,7 @@ christmasList.printList();
 It should print:
 
 ```
-My Christmas 🎅 whishes
+My Christmas 🎅 wishes
  1. Yellow power ranger (€9.99)
  2. Christmas carols CD (€24.99)
  3. Toy train from BRIO (€35.58)

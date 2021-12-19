@@ -1,7 +1,7 @@
 import { createPrice, createSupplier, Product, Supplier } from './models';
-import { WhishList } from './whish-list';
+import { WishList } from './wish-list';
 
-const christmasList = new WhishList('Christmas 🎅');
+const christmasList = new WishList('Christmas 🎅');
 const brio: Supplier = { id: 1, name: 'BRIO' };
 
 christmasList.setWish(

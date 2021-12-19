@@ -2,7 +2,7 @@
 
 _🎄 Christmas edition_
 
-In this lab, you will make the whish list support multiple currencies (both dollars and euros).
+In this lab, you will make the wish list support multiple currencies (both dollars and euros).
 
 ## Exercise 1: Add `Currency`
 
@@ -22,7 +22,7 @@ In this lab, you will make the whish list support multiple currencies (both doll
 
 ## Exercise 2: Play around with other advanced concepts
 
-Play around with other advanced concepts. Some creative idea's:
+Play around with other advanced concepts. Some creative ideas:
 
 1. Create a custom type guard for `Price`.
 
@@ -33,7 +33,7 @@ Play around with other advanced concepts. Some creative idea's:
 
    function displayPrice(maybePrice: unknown) {
      if (isPrice(maybePrice)) {
-       WhishList.formatPrice(maybePrice);
+       WishList.formatPrice(maybePrice);
      }
    }
    ```
