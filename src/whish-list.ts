@@ -1,4 +1,4 @@
-import { Currency, exchangeRateToEuro } from './models/currency';
+import { exchangeRateToEuro } from './models/currency';
 import { Price } from './models/price';
 import { Product } from './models/product';
 
@@ -7,12 +7,13 @@ export class WhishList {
 
   constructor(public readonly title: string) {}
 
-  get totalPrice() {
-    return this.list.reduce(
+  get totalPrice(): Price {
+    const amount = this.list.reduce(
       (acc, product) =>
         acc + product.price.amount * exchangeRateToEuro[product.price.currency],
       0
     );
+    return { currency: 'Euro', amount };
   }
 
   public setWish(place: number, product: Product) {
@@ -36,11 +37,9 @@ export class WhishList {
     console.log(`My ${this.title} whishes`);
     for (let i = 0; i < this.list.length; i++) {
       const product = this.list[i];
-      console.log(
-        ` ${i + 1}. ${product.display()}`
-      );
+      console.log(` ${i + 1}. ${product.display()}`);
     }
-    console.log(`Total: €${this.totalPrice.toFixed(2)}`);
+    console.log(`Total: ${WhishList.formatPrice(this.totalPrice)}`);
   }
 
   static formatPrice(price: Price): string {

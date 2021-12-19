@@ -1,6 +1,12 @@
 export type Currency = 'Euro' | 'Dollar';
 
-export const exchangeRateToEuro: Record<Currency, number> = {
-  ['Dollar']: 1.1237,
-  ['Euro']: 1,
+type ExchangeRate = {
+  readonly [Cur in Currency]: number;
 };
+
+// Alternative: ExchangeRate = Record<Currency, number>;
+
+export const exchangeRateToEuro: ExchangeRate = Object.freeze({
+  Dollar: 1.1237,
+  Euro: 1,
+});
