@@ -14,7 +14,7 @@ The `totalPrice` property is no longer calculating the total price correctly, si
    type ExchangeRate = // TODO;
 
    export const exchangeRateToEuro: ExchangeRate = {
-     Dollar: 1.1237,
+     Dollar: 0.88509614,
      Euro: 1,
    };
    ```
@@ -23,12 +23,12 @@ The `totalPrice` property is no longer calculating the total price correctly, si
 
    ```ts
    const missingEuro: ExchangeRate = {
-     Dollar: 1.1237,
+     Dollar: 0.88509614,
      // 💥
    };
 
    const excessCurrencies: ExchangeRate = {
-     Dollar: 1.1237,
+     Dollar: 0.88509614,
      Euro: 1,
      Gulden: 2.2, //  💥
    };

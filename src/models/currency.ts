@@ -7,6 +7,6 @@ type ExchangeRate = {
 // Alternative: ExchangeRate = Record<Currency, number>;
 
 export const exchangeRateToEuro: ExchangeRate = Object.freeze({
-  Dollar: 1.1237,
+  Dollar: 0.88509614,
   Euro: 1,
 });
