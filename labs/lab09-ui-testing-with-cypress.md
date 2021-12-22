@@ -14,7 +14,7 @@ _Note: Be sure your application is running with (`ng serve`)_
    ng add @cypress/schematic
    ```
    Installing cypress might take a while. Be patient.
-1. Run cypress with `ng run cypress:open`
+1. Run cypress with `npm run cypress:open`
 1. This should open cypress chromium shell
    ![cypress-chromium-shell](./img/cypress-chromium-shell.png)
 1. Click the `spec.ts` file. This runs the generated test coming with cypress. It should fail (it is looking for text that cannot be found).
@@ -60,7 +60,7 @@ _Note: Be sure your application is running with (`ng serve`)_
    _Hint: they should be added to the add product `form` and the wish `ol` list_
 1. Make sure all tests are passing
 
-## Exercise 2: Add a `enterWish` command
+## Exercise 3: Add a `enterWish` command
 
 It seems like we're going to enter data into the product form quite often. Time to create a custom command for it.
 
