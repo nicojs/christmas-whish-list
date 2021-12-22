@@ -1,0 +1,12 @@
+<div class="row" >
+  <div *ngFor="let product of products" class="card text-center" style="width: 18rem;">
+    <div class="card-img-top">
+      <img class="mx-auto d-block" [src]="product.imgUrl" [alt]="product.title" >
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}} {{product.price | price}}</h5>
+      <p class="card-text"><a target="_blank" [href]="product.href" class="card-link">More info</a></p>
+      <button (click)="add.emit(product)" type="button" class="btn btn-primary mr-1">Add to list!</button>
+    </div>
+  </div>
+</div>

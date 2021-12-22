@@ -1,0 +1,105 @@
+<form data-test-id="product-form" [formGroup]="form" (ngSubmit)="addWish()">
+  <div class="mb-2">
+    <label for="titleInput">Title</label>
+    <div *ngIf="form.get('title')!.touched">
+      <span
+        class="invalid-feedback"
+        *ngIf="form.get('title')!.errors?.['required']"
+      >
+        Please fill in this field.
+      </span>
+    </div>
+    <input
+      id="titleInput"
+      autocomplete="off"
+      formControlName="title"
+      name="title"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <div class="row mb-2">
+    <div class="col-2">
+      <label for="placeInput">Place</label>
+      <div *ngIf="form.get('place')!.touched">
+        <span
+          class="invalid-feedback"
+          *ngIf="form.get('place')!.errors?.['required']"
+        >
+          Please fill in this field.
+        </span>
+        <span
+          class="invalid-feedback"
+          *ngIf="form.get('place')!.errors?.['min']"
+        >
+          Min value is 1
+        </span>
+      </div>
+      <input
+        name="place"
+        id="placeInput"
+        formControlName="place"
+        class="col form-control"
+        type="number"
+        step="1"
+      />
+    </div>
+
+    <div class="col-3" formGroupName="price">
+      <div class="row">
+        <div class="col-5">
+          <label for="currencyInput"></label>
+          <div *ngIf="form.get('price')!.get('currency')!.touched">
+            <span
+              class="invalid-feedback"
+              *ngIf="form.get('price')!.get('currency')!.errors?.['required']"
+            >
+              Please fill in this field.
+            </span>
+          </div>
+          <select
+            formControlName="currency"
+            id="currencyInput"
+            class="form-control"
+          >
+            <option
+              *ngFor="let item of currencies | keyvalue"
+              [value]="item.key"
+            >
+              {{ item.value }}
+            </option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="priceInput">Price</label>
+          <div *ngIf="form.get('price')!.get('amount')!.touched">
+            <span
+              class="invalid-feedback"
+              *ngIf="form.get('price')!.get('amount')!.errors?.['required']"
+            >
+              Please fill in this field.
+            </span>
+            <span
+              class="invalid-feedback"
+              *ngIf="form.get('price')!.get('amount')!.errors?.['min']"
+            >
+              Minimal value is 0
+            </span>
+          </div>
+          <input
+            id="priceInput"
+            name="amount"
+            type="number"
+            formControlName="amount"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-2">
+    <button [disabled]="form.invalid" class="btn btn-primary" type="submit">
+      Add
+    </button>
+  </div>
+</form>
