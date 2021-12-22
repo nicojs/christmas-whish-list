@@ -9,7 +9,7 @@ In this lab you will be creating and using some interfaces.
 Create a `Supplier` interface. Has 3 fields:
 
 1. `id` of type `number`.
-1. `name` of type `string.
+1. `name` of type `string`.
 1. `website` of type `string`.
 
 Make sure the website is optional.
@@ -27,9 +27,9 @@ const princess: Supplier = {
 
 ## Exercise 2: The `Product` interface
 
-Create a `Product` interface. A product has an optional supplier, an `id` (number), `title` (`string`) and a `price` (`number`). It also has a `display` method that returns a string (without parameters). The display method should print the product like this "{title} from {supplier} (€{price})".
+Create a `Product` interface. A product has an `id` (number), `title` (`string`), a `price` (`number`) and an optional `supplier` (type `Supplier`). It also has a `display` method that returns a string (without parameters). The display method should return a string with the product information: "{title} from {supplier} (€{price})".
 
-Now create a product with title "Christmas carols" and supplier "The King's Singers" of with a price of 11.49 and call the `display()` method, it should print "Christmas carols from The King's Singers (€24.99)".
+Now create a product with title "Christmas carols" and supplier "The King's Singers" of with a price of 24.99 and call the `display()` method, it should print "Christmas carols from The King's Singers (€24.99)".
 
 ```ts
 const christmasCarols: Product = {

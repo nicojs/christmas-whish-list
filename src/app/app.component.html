@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="display1">The big {{ christmasList.title }} list</h1>
+
+  <h2>Make a wish 🌠</h2>
+  <cwl-product-form (add)="addWish($event)"></cwl-product-form>
+
+  <cwl-product-cards (add)="selectProduct($event)" [products]="this.scopedProducts"></cwl-product-cards>
+
+  <h2>The list 📃</h2>
+  <ol  data-test-id="wish-list">
+    <li *ngFor="let wish of christmasList.wishes">
+      {{ wish | displayProduct }}
+    </li>
+  </ol>
+
+  Total price: {{ christmasList.totalPrice | price }}
+</div>

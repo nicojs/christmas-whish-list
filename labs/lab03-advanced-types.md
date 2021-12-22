@@ -17,7 +17,7 @@ In this lab, you will make the wish list support multiple currencies (both dolla
    ```
 
 1. Change the `Product` class, so it supports prices in this format (change the type of `price` from `number` to the new `Price`).
-1. Fix all compiler errors. Be sure to print the correct currency sign: `€` and `$` for `'Euro'` and `'Dollar' respectively.
+1. Fix all compiler errors. Be sure to print the correct currency sign: `€` and `$` for `'Euro'` and `'Dollar'` respectively.
 1. Change the currency of 1 or more of your wishes to be in dollars.
 
 ## Exercise 2: Play around with other advanced concepts
