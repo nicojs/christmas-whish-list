@@ -30,7 +30,7 @@ In this exercise, we'll be using a tool called [json-server](https://www.npmjs.c
 
 ## Exercise 2: Create the products service
 
-1. Expand the `Product` class with to additional fields: `href` and `imgUrl`. Both should be optional and of type `string`.
+1. Expand the `Product` class with two additional fields: `href` and `imgUrl`. Both should be optional and of type `string`.
 1. Create a service for retrieving products. You can use this template:
 
    ```ts

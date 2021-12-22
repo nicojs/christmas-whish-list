@@ -58,13 +58,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // this.productFormComponent!.titleValue$.pipe(
-    //   auditTime(500),
-    //   tap(() => (this.scopedProducts = undefined)),
-    //   filter(notEmpty),
-    //   filter((value) => value.length > 1),
-    //   switchMap((value) => this.productService.search(value))
-    // ).subscribe((products) => (this.scopedProducts = products));
+    this.productFormComponent!.titleValue$.pipe(
+      auditTime(500),
+      tap(() => (this.scopedProducts = undefined)),
+      filter(notEmpty),
+      filter((value) => value.length > 1),
+      switchMap((value) => this.productService.search(value))
+    ).subscribe((products) => (this.scopedProducts = products));
   }
 
   selectProduct(product: Product) {
